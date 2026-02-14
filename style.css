@@ -79,3 +79,138 @@ h1 {
   justify-content: center;
   padding: 10px;
 }
+
+body {
+  margin: 0;
+  display: flex;
+  font-family: Arial, sans-serif;
+}
+
+#sidebar {
+  width: 200px;
+  height: 100vh;
+  background: #f4f4f4;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#sidebar a {
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+#main {
+  flex: 1;
+  padding: 20px;
+}
+
+#learning-card {
+  width: 220px;
+  height: 300px;
+  margin: 40px auto;        /* centers the card horizontally */
+  text-align: center;       /* center content inside */
+  border: 2px solid #333;   /* simple border */
+  border-radius: 10px;      /* slightly rounded corners */
+  padding: 15px;
+  background: #fff;          /* white background */
+}
+
+#pokemon-image {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  margin: 0 auto;           /* centers the image */
+  display: block;
+}
+
+#pokemon-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 10px;         /* small gap below image */
+}
+
+
+/* Container for the buttons */
+/*
+#main > div:first-of-type {
+  text-align: center;       
+  margin-top: 20px;
+  margin-bottom: 20px;
+  gap: 15px;                
+  display: flex;
+  justify-content: center;  
+  flex-wrap: wrap;        
+}
+
+/* Style the buttons */
+/*
+#mode-image,
+#mode-name {
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #29ae48;  
+  border: 2px solid #2a75bb;  
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+/*
+#mode-image:hover,
+#mode-name:hover {
+  background-color: #f5b700;  
+  transform: translateY(-2px); 
+}
+
+/* Active button feedback */
+/*
+#mode-image:active,
+#mode-name:active {
+  transform: translateY(0);
+  background-color: #ffc000;
+}
+*/
+#progress {
+  text-align: center;      /* center the text */
+  margin: 15px auto 0;     /* space above, auto horizontal margin */
+  font-weight: bold;
+  font-size: 1em;
+  width: 100%;             /* full width of container */
+}
+
+/* If using a progress bar */
+#progress-bar-container {
+  width: 220px;
+  height: 20px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 10px auto;       /* centers horizontally */
+  overflow: hidden;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #ffcb05;
+  transition: width 0.3s ease;
+}
+
+/* Normal button style */
+#direct-names {
+  background-color: #eee;
+  color: #333;
+  cursor: pointer;        /* ensures pointer on hover */
+}
+
+/* Highlight when selected */
+#direct-names.selected {
+  background-color: #4CAF50; /* Green highlight */
+  color: white;
+  border-color: #4CAF50;
+}

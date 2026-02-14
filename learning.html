@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pokémon Learning</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="sidebar">
+    <a href="index.html">Home</a>
+    <a href="learning.html">Learning</a>
+    <a href="quiz.html">Quiz</a>
+  </div>
+
+  <div id="main">
+    <h1>Pokémon Learning</h1>
+
+    <!-- Mode Buttons -->
+    <!-- Directly display Names -->
+    <div id="mode-buttons">
+      <button id="mode-image">Image → Name</button>
+      <button id="mode-name">Name → Image</button>
+      <button id="direct-names">Directly display Names</button>
+    </div>
+
+    <!-- Generation Selector -->
+    <div id="gen-container">
+      <label for="gen-select">Select Generation:</label>
+      <select id="gen-select">
+        <option value="all">All Generations</option>
+        <option value="Gen 1">Gen 1</option>
+        <option value="Gen 2">Gen 2</option>
+        <option value="Gen 3">Gen 3</option>
+        <option value="Gen 4">Gen 4</option>
+        <option value="Gen 5">Gen 5</option>
+        <option value="Gen 6">Gen 6</option>
+        <option value="Gen 7">Gen 7</option>
+        <option value="Gen 8">Gen 8</option>
+        <option value="Gen 9">Gen 9</option>
+      </select>
+    </div>
+
+    <!-- Learning Card -->
+    <div id="learning-card">
+      <h2 id="pokemon-name"></h2>
+      <img id="pokemon-image" src="" alt="">
+    </div>
+
+    <!-- Control Buttons -->
+    <div id="control-buttons">
+      <button id="previous">Previous</button>
+      <button id="next">Next</button>
+      <button id="reveal">Reveal</button>
+      <button id="known">Known</button>
+    </div>
+
+    <!-- Progress Tracker -->
+    <div id="progress">
+      Learned: <span id="learned-count">0</span> / <span id="total-count">0</span>
+    </div>
+    <div id="progress-bar-container">
+      <div id="progress-bar"></div>
+    </div>
+    <!-- Reset Progress Button -->
+    <div id="reset-progress-container">
+      <button id="reset-progress">Reset Progress</button>
+    </div>
+  </div>
+
+  <script src="learning.js"></script>
+</body>
+</html>

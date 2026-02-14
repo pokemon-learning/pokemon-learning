@@ -31,11 +31,32 @@ fetch('pokemon.json')
 
     // Search functionality
     const searchInput = document.getElementById('search');
-    searchInput.addEventListener('input', e => {
-      const query = e.target.value.toLowerCase();
-      const filtered = allPokemon.filter(p =>
-        p.name.toLowerCase().includes(query)
-      );
+    const typeFilter = document.getElementById('type-filter');
+    const genFilter = document.getElementById('gen-filter');
+
+    function applyFilters() {
+      const query = searchInput.value.toLowerCase();
+      const selectedType = typeFilter.value;
+      const selectedGen = genFilter.value;
+
+      const filtered = allPokemon.filter(p => {
+        const matchesSearch = p.name.toLowerCase().includes(query);
+
+        const matchesType =
+          selectedType === 'all' || p.types.includes(selectedType);
+
+        const matchesGen =
+          selectedGen === 'all' || p.generation === selectedGen;
+
+        return matchesSearch && matchesType && matchesGen;
+      });
+
       displayCards(filtered);
-    });
+    }
+
+    // React to ALL controls
+    searchInput.addEventListener('input', applyFilters);
+    typeFilter.addEventListener('change', applyFilters);
+    genFilter.addEventListener('change', applyFilters);
+
   });

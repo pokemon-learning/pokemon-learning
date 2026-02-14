@@ -5,14 +5,61 @@
   <title>Pokémon Cards</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <h1>Pokémon Cards</h1>
 
-  <!-- Search Bar -->
-  <input type="text" id="search" placeholder="Search Pokémon by name..." />
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <a href="index.html">Home</a>
+    <a href="learning.html">Learning</a>
+    <a href="quiz.html">Quiz</a>
+  </div>
 
-  <!-- Cards Container -->
-  <div id="cards-container"></div>
+  <!-- Main Content -->
+  <div id="main">
+    <h1>Pokémon Cards</h1>
+
+    <!-- Search Bar -->
+    <input type="text" id="search" placeholder="Search Pokémon by name..." />
+
+    <!-- Filters -->
+    <div id="filters">
+      <select id="type-filter" >
+        <option value="all">All Types</option>
+        <option value="Acier">Acier</option>
+        <option value="Dragon">Dragon</option>
+        <option value="Eau">Eau</option>
+        <option value="Électrik">Électrik</option>
+        <option value="Feu">Feu</option>
+        <option value="Fée">Fée</option>
+        <option value="Glace">Glace</option>
+        <option value="Insecte">Insecte</option>
+        <option value="Normal">Normal</option>
+        <option value="Plante">Plante</option>
+        <option value="Poison">Poison</option>
+        <option value="Psy">Psy</option>
+        <option value="Sol">Sol</option>
+        <option value="Spectre">Spectre</option>
+        <option value="Ténèbres">Ténèbres</option>
+      </select>
+
+      <select id="gen-filter">
+        <option value="all">All Generations</option>
+        <option value="Gen 1">Gen 1</option>
+        <option value="Gen 2">Gen 2</option>
+        <option value="Gen 3">Gen 3</option>
+        <option value="Gen 4">Gen 4</option>
+        <option value="Gen 5">Gen 5</option>
+        <option value="Gen 6">Gen 6</option>
+        <option value="Gen 7">Gen 7</option>
+        <option value="Gen 8">Gen 8</option>
+        <option value="Gen 9">Gen 9</option>
+      </select>
+    </div>
+
+    <!-- Cards -->
+    <div id="cards-container"></div>
+  </div>
 
   <script src="script.js"></script>
 </body>

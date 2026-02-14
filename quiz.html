@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pokémon Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="sidebar">
+    <a href="index.html">Home</a>
+    <a href="learning.html">Learning</a>
+    <a href="quiz.html">Quiz</a>
+  </div>
+
+  <div id="main">
+    <h1>Pokémon Quiz</h1>
+
+    <!-- Quiz Settings -->
+    <div id="quiz-settings">
+      <label for="quiz-gen-select">Select Generation:</label>
+      <select id="quiz-gen-select">
+        <option value="all">All Generations</option>
+        <option value="Gen 1">Gen 1</option>
+        <option value="Gen 2">Gen 2</option>
+        <option value="Gen 3">Gen 3</option>
+        <option value="Gen 4">Gen 4</option>
+        <option value="Gen 5">Gen 5</option>
+        <option value="Gen 6">Gen 6</option>
+        <option value="Gen 7">Gen 7</option>
+        <option value="Gen 8">Gen 8</option>
+        <option value="Gen 9">Gen 9</option>
+      </select>
+
+      <label for="num-questions">Number of Questions:</label>
+      <input type="number" id="num-questions" value="10" min="1" max="100">
+
+      <button id="start-quiz">Start Quiz</button>
+    </div>
+
+    <!-- Quiz Card -->
+    <div id="quiz-card" style="display:none;">
+      <h2 id="quiz-pokemon-name"></h2>
+      <img id="quiz-pokemon-image" src="" alt="">
+      
+      <input type="text" id="quiz-answer" placeholder="Type the Pokémon name">
+      <button id="submit-answer">Submit</button>
+
+      <p id="quiz-feedback"></p>
+      <p id="quiz-progress"></p>
+    </div>
+
+    <!-- Quiz Result -->
+    <div id="quiz-result" style="display:none;">
+      <h2>Quiz Complete!</h2>
+      <p id="quiz-score"></p>
+      <button id="restart-quiz">Restart Quiz</button>
+    </div>
+  </div>
+
+  <script src="quiz.js"></script>
+</body>
+</html>
