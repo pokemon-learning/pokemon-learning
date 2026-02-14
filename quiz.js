@@ -55,9 +55,17 @@ startBtn.addEventListener("click", () => {
   quizResult.style.display = "none";
   showNextQuestion();
 });
+// Existing button click listener
+submitBtn.addEventListener("click", submitAnswer);
 
+// Add Enter key listener on input
+quizAnswerInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    submitAnswer();
+  }
+});
 // Submit Answer
-submitBtn.addEventListener("click", () => {
+function submitAnswer() {
   const answer = quizAnswerInput.value.trim().toLowerCase();
   const correct = quizQuestions[currentIndex].name.toLowerCase();
 
@@ -79,7 +87,7 @@ submitBtn.addEventListener("click", () => {
   } else {
     setTimeout(showResult, 1000);
   }
-});
+}
 
 // Show next question
 function showNextQuestion() {
