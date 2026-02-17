@@ -65,9 +65,18 @@ quizAnswerInput.addEventListener("keydown", (event) => {
   }
 });
 // Submit Answer
+function normalizeText(str) {
+  return str
+    .normalize("NFD")                 // separate accents from letters
+    .replace(/[\u0300-\u036f]/g, "")  // remove diacritics
+    .replace(/[^\p{L}\p{N}]/gu, "")   // remove special characters (keep letters/numbers)
+    .toLowerCase()
+    .trim();
+}
+
 function submitAnswer() {
-  const answer = quizAnswerInput.value.trim().toLowerCase();
-  const correct = quizQuestions[currentIndex].name.toLowerCase();
+  const answer = normalizeText(quizAnswerInput.value);
+  const correct = normalizeText(quizQuestions[currentIndex].name);
 
   if (answer === correct) {
     feedbackEl.textContent = "Correct! ✅";

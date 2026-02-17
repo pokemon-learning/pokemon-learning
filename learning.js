@@ -157,7 +157,7 @@ function updateProgress() {
     // Sum over all generations
     for (const genData of Object.values(progress)) {
       knownInGen += genData.knownCount;
-      totalInGen += genData.knownCount + genData.learningPool.length;
+      //totalInGen += genData.knownCount + genData.learningPool.length;
     }
   } else {
     // Per-generation counts
@@ -168,7 +168,11 @@ function updateProgress() {
 
   // Update per-gen or all-gen display
   document.getElementById("learned-count").textContent = knownInGen;
-  document.getElementById("total-count").textContent = totalInGen;
+  if (selectedGen !== "all") {
+    document.getElementById("total-count").textContent = totalInGen;
+  } else {
+    document.getElementById("total-count").textContent = allPokemon.length;
+  }
 
   // Progress bar
   const percent = totalInGen === 0 ? 0 : (knownInGen / totalInGen) * 100;
